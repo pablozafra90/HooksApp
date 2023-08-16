@@ -6,7 +6,7 @@ export const CounterApp = () => {
         counter1: 10,
         counter2: 10,
         counter3: 10,        
-    })
+    });
 
     const { counter1, counter2, counter3 } = state;
 

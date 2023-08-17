@@ -54,7 +54,7 @@ export const SimpleForm = () => {
                 onChange={ onInputChange }
             />
             
-            { (username === "kalipo") && <Message/>}
+            { (username === "a") && <Message/>}
         </>
   )
 }

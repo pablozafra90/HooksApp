@@ -21,7 +21,7 @@ export const FormWithCustomHook = () => {
     //     // console.log( name )
     // }
 
-    const { formState, onInputChange } = useForm({
+    const { formState, onInputChange, resetForm } = useForm({
         username: '',
         email: '',
         password: '',
@@ -61,7 +61,7 @@ export const FormWithCustomHook = () => {
                 onChange={ onInputChange }
             />
             
-            { (username === "a") && <Message/>}
+            <button onClick={ resetForm } className='btn btn-primary mt-2'>Borrar</button>
         </>
   )
 }

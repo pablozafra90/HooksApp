@@ -12,7 +12,7 @@ export const TodoApp = () => {
         },
         {
             id: new Date().getTime() * 3,
-            description: 'Recolectar la piedra del alma',
+            description: 'Recolectar la piedra del tiempo',
             done: false
 
         }
@@ -20,8 +20,9 @@ export const TodoApp = () => {
 
     const [ todos, dispatch ] = useReducer( todoReducer, initialState );
     
-    const onNewTodo = ( newTodo ) => {
+    const handleNewTodo = ( newTodo ) => {
         todos = [ todos, ...newTodo];
+        console.log(newTodo);
     }
 
      
@@ -54,7 +55,7 @@ export const TodoApp = () => {
                 <hr />
                 {/* TodoAdd onNewTodo */}
 
-                <AddTodo onNewTodo={ onNewTodo } />
+                <AddTodo onNewTodo={ handleNewTodo } />
                 {/* <input
                     type="text"
                     placeholder="¿Qué hay que hacer"

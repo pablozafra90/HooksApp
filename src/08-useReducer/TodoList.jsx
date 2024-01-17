@@ -1,4 +1,3 @@
-import React from 'react'
 import { TodoItem } from './TodoItem'
 
 export const TodoList = ({ todos = [] }) => {
@@ -7,7 +6,7 @@ export const TodoList = ({ todos = [] }) => {
             {
                 todos.map( todo => (
                     //TodoItem
-                    <TodoItem id={ todo.id } description={ todo.description } />
+                    <TodoItem key={ todo.id } todo={ todo } />
                 ))
             }
         </ul>  

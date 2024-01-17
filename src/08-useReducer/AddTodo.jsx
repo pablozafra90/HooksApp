@@ -1,38 +1,46 @@
 import { useState } from "react";
+import { useForm } from "../Hooks/useForm";
 
 export const AddTodo = ({ onNewTodo }) => {
 
-    const [inputValue, setInputValue] = useState('');
+    const { description, onInputChange, resetForm } = useForm({
+        description: ''
+    })
 
-    const onInputChange = ({ target }) => {
-        //console.log(target.value);
-        setInputValue(target.value);
-    }
+    const onFormSubmit = ( event ) => {
+        event.preventDefault();
+        if (event.trim().length <= 0) return;
 
-    const onSubmit = ( event ) => {
-        if (inputValue.trim().length <= 0) return;
-        onNewTodo(inputValue.trim());
-        setInputValue('');
+        const newTodo = {
+            id: new Date().getTime(),
+            done: false,
+            description: description,
+        }
+
+        resetForm();
+
+        onNewTodo( newTodo );
     }
 
   return (
-    <>
+    <form>
 
-        <input onSubmit={ onSubmit }
+        <input onSubmit={ onFormSubmit }
             type="text"
             placeholder="¿Qué hay que hacer"
             className="form-control"
-            value={inputValue}
-            onChange={onInputChange}
+            name="description"
+            value={ description }
+            onChange={ onInputChange }
         />
 
         <button
             type="submit"
             className="btn btn-outline-primary mt-3"
-            onClick={ () => { onSubmit() } }
+            onClick={ () => { onFormSubmit() } }
         >
             Agregar
         </button>
-    </>
+    </form>
   )
 }

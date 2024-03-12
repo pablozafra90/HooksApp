@@ -28,11 +28,43 @@ describe('Pruebas  en todoReducer', () => {
             }
         }
 
-        const newState = todoReducer(initialState, action);
+        const newState = todoReducer( initialState, action );
 
         expect( newState.length ).toBe( 2 );
-        // expect( newState ).toContain( action.playload );
+        expect( newState ).toContain( action.playload );
 
       })
+
+      test('should remove todo', () => { 
+        
+        const action = {
+            type: '[TODO] Remove Todo',
+            playload: {
+                id: 1,
+            }
+        }
+
+        const newState = todoReducer( initialState, action );
+
+        expect( newState.length ).toBe( 0 );
+        expect( newState ).toContain( action.playload ).toBeFalsy;
+
+       })
+
+       test('should toggle todo', () => { 
+         
+         const action = {
+             type: '[TODO] Toggle Todo',
+             playload: {
+                 id: 1,
+             }
+         }
+ 
+         const newState = todoReducer( initialState, action );
+ 
+         expect( newState.length ).toBe( 0 );
+         expect( newState[0].done ).toBe( true );
+ 
+        })
 
  })

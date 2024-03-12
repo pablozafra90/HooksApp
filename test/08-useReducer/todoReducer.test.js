@@ -3,11 +3,11 @@ const { todoReducer } = require("../../src/08-useReducer/todoReducer");
 
 describe('Pruebas  en todoReducer', () => { 
 
-    const initialState = {
+    const initialState = [{
         id: 1,
         description: 'Demo Todo',
         done: false,
-    };
+    }];
     
     test('should return initial state', () => { 
         
@@ -45,14 +45,16 @@ describe('Pruebas  en todoReducer', () => {
         const newState = todoReducer( initialState, action );
 
         expect( newState.length ).toBe( 0 );
-        // expect( newState ).toContain( action.playload ).toBeFalsy;
+        expect( newState ).not.toContain( action.playload );
 
        })
 
        test('should toggle todo', () => { 
+
+        console.log( initialState );
          
          const action = {
-             type: '[TODO] Toggle Todo',
+             type: '[TODO] Togle Todo',
              playload: 1
          }
  

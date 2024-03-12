@@ -1,8 +1,8 @@
 const { render, screen } = require("@testing-library/react");
-const { MultipleCustomHooks } = require("../../../src/03-examples/MultipleCustomHooks");
-const { useFetch } = require("../../../src/Hooks");
+const { MultipleCustomHooks } = require("../../src/03-examples/MultipleCustomHooks");
+const { useFetch } = require("../../src/Hooks");
 
-jest.mock("../../../src/Hooks");
+jest.mock("../../src/Hooks");
 
 describe('Pruebas en <MultipleCustomHooks />', () => { 
 

@@ -39,9 +39,7 @@ describe('Pruebas  en todoReducer', () => {
         
         const action = {
             type: '[TODO] Remove Todo',
-            playload: {
-                id: 1,
-            }
+            playload: 1
         }
 
         const newState = todoReducer( initialState, action );
@@ -55,9 +53,7 @@ describe('Pruebas  en todoReducer', () => {
          
          const action = {
              type: '[TODO] Toggle Todo',
-             playload: {
-                 id: 1,
-             }
+             playload: 1
          }
  
          const newState = todoReducer( initialState, action );

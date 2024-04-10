@@ -6,6 +6,7 @@ export const TodoItem = ({ todo, onDeleteTodo, onTogleTodo }) => {
         <span
           className={`align-self-center ${ todo.done ? 'text-decoration-line-through' : '' } cursor-pointer `}
           onClick={ () => { onTogleTodo( todo.id ) }}
+          aria-label={'span'}
         >
           { todo.description }
         </span>

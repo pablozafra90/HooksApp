@@ -34,7 +34,7 @@ describe('Pruebas en <MultipleCustomHooks />', () => {
         })
         
         render( <MultipleCustomHooks/> );
-        screen.debug();
+        //screen.debug();
 
       })
 
